@@ -1,0 +1,39 @@
+server:
+  port: 8080
+  error:
+    include-message: always
+
+spring:
+  data:
+    mongodb:
+      uri: mongodb://localhost:27017/student-management
+  main:
+    web-application-type: servlet
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  codec:
+    max-in-memory-size: 10MB
+
+
+aws:
+  region: eu-west-1
+  s3:
+    mock: true
+#    buckets:
+#      student: fs-test-student
+
+cors:
+  allowed-origins: "*"
+  allowed-methods: "*"
+  allowed-headers: "*"
+  exposed-headers: "*"
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info"
+
+
